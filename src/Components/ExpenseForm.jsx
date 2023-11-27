@@ -8,27 +8,30 @@ function ExpenseForm() {
     const [amount, setAmount] = useState('');
   
     const handleSubmit = (e) => {
-      e.preventDefault();
-  
-      if (description.trim() === '' || isNaN(amount) || amount <= 0) {
-        return;
-      }
-  
-      dispatch({
-        type: 'ADD_EXPENSE',
-        payload: {
-          description: description,
-          amount: parseFloat(amount),
-        },
-      });
-  
-      // Clear the form fields
-      setDescription('');
-      setAmount('');
-    };
+        e.preventDefault();
+      
+        console.log('Submitting form with values:', description, amount);
+      
+        if (description.trim() === '' || isNaN(amount) || amount <= 0) {
+          return;
+        }
+      
+        dispatch({
+          type: 'ADD_EXPENSE',
+          payload: {
+            description: description,
+            amount: parseFloat(amount),
+          },
+        });
+      
+        
+        setDescription('');
+        setAmount('');
+      };
+     
   
     return (
-      <div className="mt-9 bg-gray-100  my-div bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-md shadow-lg hover:shadow-xl">
+      <div className="mt-9 bg-gray-100 my-div bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-md shadow-lg hover:shadow-xl">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <label className="flex flex-col">
             <span className="mb-2 text-gray-700">Name:</span>
