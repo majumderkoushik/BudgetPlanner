@@ -39,7 +39,7 @@ function ExpenseForm() {
      
   
     return (
-      <div className="mt-9 bg-gray-100 my-div bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-md shadow-lg hover:shadow-xl">
+      <div className="mt-9 bg-gray-100  bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-md shadow-lg hover:shadow-xl">
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <label className="flex flex-col">
             <span className="mb-2 text-gray-700">Name:</span>
