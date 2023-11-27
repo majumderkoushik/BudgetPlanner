@@ -5,7 +5,7 @@ const ExpenseContext = createContext();
 const initialState = {
   totalMoney: 40000,
   spent: 0,
-  saving: 20000,
+  saving: 40000,
   transaction: [],
 };
 

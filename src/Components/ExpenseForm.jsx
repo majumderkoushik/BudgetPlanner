@@ -8,26 +8,34 @@ function ExpenseForm() {
     const [amount, setAmount] = useState('');
   
     const handleSubmit = (e) => {
-        e.preventDefault();
-      
-        console.log('Submitting form with values:', description, amount);
-      
-        if (description.trim() === '' || isNaN(amount) || amount <= 0) {
+      e.preventDefault();
+  
+      console.log('Submitting form with values:', description, amount);
+  
+      if(description.trim() === ''||!isNaN(description.trim()) || isNaN(amount) || amount <= 0) {
+          
           return;
-        }
-      
-        dispatch({
+      }
+  
+      const parsedAmount = parseFloat(amount);
+  
+      if (parsedAmount > 40000) {
+        
+          return;
+      }
+  
+      dispatch({
           type: 'ADD_EXPENSE',
           payload: {
-            description: description,
-            amount: parseFloat(amount),
+              description: description,
+              amount: parsedAmount,
           },
-        });
-      
-        
-        setDescription('');
-        setAmount('');
-      };
+      });
+  
+      setDescription('');
+      setAmount('');
+  };
+  
      
   
     return (
